@@ -14,7 +14,7 @@ Dataset berisi informasi pelanggan seperti:
 - Data preprocessing (cleaning, encoding)
 - Exploratory Data Analysis (EDA)
 - Training model ML (Logistic Regression, Random Forest, XGBoost)
-- Evaluasi menggunakan akurasi, precision, recall, dan F1-score
+- Evaluasi F2-Score
 - Visualisasi hasil dan insight bisnis
 
 ## Link Streamlit
