@@ -3,6 +3,14 @@ import pandas as pd
 import pickle
 from xgboost import XGBClassifier
 
+# Tambahkan ini sebelum load model
+if not os.path.exists("model_xgb.sav"):
+    st.error("🚨 Model file not found!")
+    st.stop()  # hentikan eksekusi streamlit jika file tidak ditemukan
+else:
+    model_loaded = pickle.load(open("model_xgb.sav", "rb"))
+
+
 # Konfigurasi halaman
 st.set_page_config(page_title="Prediksi Customer Churn", layout="centered")
 
@@ -49,7 +57,7 @@ st.subheader("📄 Data Pelanggan")
 st.dataframe(df_customer, use_container_width=True)
 
 # Load model
-model_loaded = pickle.load(open("model_xgb.sav", "rb"))
+# model_loaded = pickle.load(open("model_xgb.sav", "rb"))
 prediction = model_loaded.predict(df_customer)
 
 # Output prediksi
